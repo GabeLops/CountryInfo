@@ -9,14 +9,14 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var countries [Any]()
+    var countries = [Country]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    override tableView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pictures.count
+    override func tableView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return countries.count
 
     }
     
