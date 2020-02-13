@@ -8,15 +8,10 @@
 
 
 
-import UIKit
+import Foundation
 
-class Country: NSObject, Codable {
-    var name = String()
-    var views = Int()
-    
-    init(name: String, views: Int) {
-        self.views = views
-        self.name = name
-    }
-
+struct Country: Codable {
+    var title: String
+    var body: String
+    var signatureCount: Int
 }
