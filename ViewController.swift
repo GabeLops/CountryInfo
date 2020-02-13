@@ -13,37 +13,20 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        title = "Country Info "
     }
-    override func tableView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
         return countries.count
 
     }
     
-    override func tableView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Image", for: indexPath) as? ImageCell
-        
-           
-        cell?.layer.borderColor = UIColor.lightGray.cgColor
-        cell?.layer.borderWidth = 2
-        cell?.layer.cornerRadius = 3
-        let picture = pictures[indexPath.item]
-        cell?.name.text = (picture.name)
-        return cell!
-        
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return Country
     }
         
     
-    override func tableView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            let picture = pictures[indexPath.item]
-            vc.selectedImage = picture.name
-            picture.views += 1
-            imageLoaded()
-            vc.selectedPictureNumber = indexPath.item + 1
-            vc.totalpictures = pictures.count
-            navigationController?.pushViewController(vc, animated: true)
-        }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        return countries
     }
 
 
