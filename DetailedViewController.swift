@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class TableViewController: UITableViewController {
+class DetailedViewController: UITableViewController {
     var detailedItem: Country?
     var webView: WKWebView!
     
