@@ -10,8 +10,8 @@ import UIKit
 import WebKit
 
 class DetailedViewController: UITableViewController {
-    var detailedItem: Country?
-    var webView: WKWebView!
+      var detailItem: Country?
+      var countryName: String?
     
     override func loadView() {
           webView = WKWebView()
